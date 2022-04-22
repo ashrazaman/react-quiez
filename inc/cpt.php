@@ -11,6 +11,7 @@ if ( !function_exists('quiz_post_type')){
                     'labels' => array(
                         'name' => __( 'Quizzes' ),
                         'singular_name' => __( 'Quiz' ),
+                        'show_in_rest' => true,
                     ),
                     'public' => true,
                     'has_archive' => true,
