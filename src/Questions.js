@@ -1,12 +1,13 @@
 import React from "react";
 import Question from "./Question";
-import {useState, useEffect} from '@wordpress/element';
+// const { useEffect, useState } = wp.element;
 
-function Questions({attr}) {
-	// console.log(attr, "ab");
-	// let {setAttributes, attributes} = attr;
-	// let {page, quizes} = attributes;
+function Questions(props) {
+	const {setAttributes, attributes} = props;
+	let {page, quizes, loading} = props.attributes;
 	// let [quizedata, setQuizeData] = useState([])
+	// const [loading, setLoading] = useState(1)
+	// let loading = 1;
 
 	let quizedata = [
 		{
@@ -39,17 +40,14 @@ function Questions({attr}) {
 		}
 	];
 
+	// useEffect(() => {
+	// 	wp.apiFetch({path: "wp/v2/quizzes"}).then(fetchedQuizes => {
+	// 		setQuizeData(fetchedQuizes);
+	// 		console.log(quizedata)
+	// 		loading = false;
+	// 	}).catch();
+	// })
 
-
-	const PageDisplay = () => {
-		// console.log(quizes);
-		return quizedata.map( (quiz) => {
-			return <Question data = {quiz} />
-		});
-
-	};
-
-	//
 	// setTimeout(function(){
 	// 	wp.apiFetch({path: "wp/v2/quizzes"}).then(fetchedQuizes => {
 	// 		setQuizeData(fetchedQuizes);
@@ -58,13 +56,29 @@ function Questions({attr}) {
 	// },3000);
 
 
-
-
 	return (
 		<div className="Form">
-			<div className="form-container">
-				{PageDisplay()}
-			</div>
+			{
+				loading &&
+				<div className="form-container">
+					{
+						quizedata.map( (quiz) => {
+							return <Question data = {quiz} />
+						})
+					}
+
+					<div className="form-footer">
+						<input type="submit" value="Submit Quiz"/>
+					</div>
+				</div>
+			}
+			{
+				!loading &&
+				<div className="loader">
+					Loading...
+				</div>
+			}
+
 		</div>
 	);
 }

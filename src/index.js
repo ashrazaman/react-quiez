@@ -2,30 +2,6 @@ import { registerBlockType } from '@wordpress/blocks';
 
 const { __ } = wp.i18n;
 
-
-// let quizes = [];
-//
-// wp.apiFetch({path: "wp/v2/quizzes"}).then(fetchedQuizes => {
-// 	quizes = fetchedQuizes;
-// }).catch();
-
-let quizes = [
-	{
-		"id": 6,
-		"title": {
-			"rendered": "second quiz"
-		},
-
-	},
-	{
-		"id": 5,
-
-		"title": {
-			"rendered": "First Quiz"
-		},
-	}
-]
-
 import './style.scss';
 
 /**
@@ -53,6 +29,10 @@ registerBlockType('gutenberg-block/quizapp', {
 		quizes : {
 			type: "array",
 			default: []
+		},
+		loading : {
+			type: "boolean",
+			default: true
 		}
 	},
 

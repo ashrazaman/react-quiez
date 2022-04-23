@@ -1,20 +1,37 @@
-import React from "react";
+function Question( data ) {
 
-function Question({ data }) {
+	function findValueByPrefix(object, prefix) {
+		let options = [];
+		for (var property in object) {
+			if (object.hasOwnProperty(property) &&
+				property.toString().startsWith(prefix)) {
+				options.push(object[property]);
+			}
+		}
+
+		return options;
+	}
+
+	let quiz_options = findValueByPrefix(data.data.quizzes_meta, "option_");
+
 	return (
 		<div className="sign-up-container">
 			<form action="">
 				<div className="single-question">
-					<h3>title: {data.title.rendered}</h3>
-					<label>
-						{/*{data.quizzes_meta[question_1]}*/}
-						<input type="radio" name="question_1"/>
-					</label>
-
-					<label>
-						{/*{data.quizzes_meta[question_2]}*/}
-						<input type="radio" name="question_2"/>
-					</label>
+					<h3>Question: {data.data.title.rendered}</h3>
+					{
+						quiz_options.map( (option) => {
+							return (
+								<div className="single-option">
+									<label>
+										{ option }
+										<input type="radio" name="{ option }"/>
+									</label>
+									<br />
+								</div>
+							)
+						})
+					}
 				</div>
 			</form>
 		</div>

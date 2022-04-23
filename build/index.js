@@ -11,28 +11,36 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
 
+function Question(data) {
+  function findValueByPrefix(object, prefix) {
+    let options = [];
 
-function Question(_ref) {
-  let {
-    data
-  } = _ref;
+    for (var property in object) {
+      if (object.hasOwnProperty(property) && property.toString().startsWith(prefix)) {
+        options.push(object[property]);
+      }
+    }
+
+    return options;
+  }
+
+  let quiz_options = findValueByPrefix(data.data.quizzes_meta, "option_");
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "sign-up-container"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
     action: ""
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "single-question"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "title: ", data.title.rendered), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    type: "radio",
-    name: "question_1"
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    type: "radio",
-    name: "question_2"
-  })))));
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Question: ", data.data.title.rendered), quiz_options.map(option => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "single-option"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, option, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      type: "radio",
+      name: "{ option }"
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null));
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Question);
@@ -56,26 +64,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const {
-  __
-} = wp.i18n;
-const {
-  serverSideRender: ServerSideRender
-} = wp;
-const {
-  InspectorControls
-} = wp.blockEditor;
 function Edit(props) {
-  const {
-    setAttributes,
-    attributes,
-    className
-  } = props;
   return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: props.className
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_questions__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    attr: props
-  }))];
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_questions__WEBPACK_IMPORTED_MODULE_2__["default"], props))];
 }
 
 /***/ }),
@@ -95,23 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const {
   __
-} = wp.i18n; // let quizes = [];
-//
-// wp.apiFetch({path: "wp/v2/quizzes"}).then(fetchedQuizes => {
-// 	quizes = fetchedQuizes;
-// }).catch();
-
-let quizes = [{
-  "id": 6,
-  "title": {
-    "rendered": "second quiz"
-  }
-}, {
-  "id": 5,
-  "title": {
-    "rendered": "First Quiz"
-  }
-}];
+} = wp.i18n;
 
 /**
  * Internal dependencies
@@ -132,6 +108,10 @@ let quizes = [{
     quizes: {
       type: "array",
       default: []
+    },
+    loading: {
+      type: "boolean",
+      default: true
     }
   },
 
@@ -162,17 +142,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Question__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Question */ "./src/Question.js");
 
 
+ // const { useEffect, useState } = wp.element;
 
-
-
-function Questions(_ref) {
+function Questions(props) {
+  const {
+    setAttributes,
+    attributes
+  } = props;
   let {
-    attr
-  } = _ref;
-  // console.log(attr, "ab");
-  // let {setAttributes, attributes} = attr;
-  // let {page, quizes} = attributes;
-  // let [quizedata, setQuizeData] = useState([])
+    page,
+    quizes,
+    loading
+  } = props.attributes; // let [quizedata, setQuizeData] = useState([])
+  // const [loading, setLoading] = useState(1)
+  // let loading = 1;
+
   let quizedata = [{
     "id": 6,
     "title": {
@@ -193,16 +177,13 @@ function Questions(_ref) {
       "option_2": "second option",
       "answer": "option_2"
     }
-  }];
-
-  const PageDisplay = () => {
-    // console.log(quizes);
-    return quizedata.map(quiz => {
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Question__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        data: quiz
-      });
-    });
-  }; //
+  }]; // useEffect(() => {
+  // 	wp.apiFetch({path: "wp/v2/quizzes"}).then(fetchedQuizes => {
+  // 		setQuizeData(fetchedQuizes);
+  // 		console.log(quizedata)
+  // 		loading = false;
+  // 	}).catch();
+  // })
   // setTimeout(function(){
   // 	wp.apiFetch({path: "wp/v2/quizzes"}).then(fetchedQuizes => {
   // 		setQuizeData(fetchedQuizes);
@@ -210,12 +191,22 @@ function Questions(_ref) {
   // 	}).catch();
   // },3000);
 
-
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "Form"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, loading && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "form-container"
-  }, PageDisplay()));
+  }, quizedata.map(quiz => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Question__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      data: quiz
+    });
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "form-footer"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "submit",
+    value: "Submit Quiz"
+  }))), !loading && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "loader"
+  }, "Loading..."));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Questions);
@@ -241,14 +232,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function save(props) {
-  const {
-    setAttributes,
-    attributes,
-    className
-  } = props;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_questions__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    attr: props
-  }));
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_questions__WEBPACK_IMPORTED_MODULE_2__["default"], props));
 }
 
 /***/ }),
