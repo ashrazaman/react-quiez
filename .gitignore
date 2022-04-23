@@ -28,3 +28,6 @@ node_modules/
 
 # dotenv environment variables file
 .env
+.idea/modules.xml
+.idea/react-quiez.iml
+.idea/vcs.xml

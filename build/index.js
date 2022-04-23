@@ -2,6 +2,282 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/OtherInfo.js":
+/*!**************************!*\
+  !*** ./src/OtherInfo.js ***!
+  \**************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function OtherInfo(_ref) {
+  let {
+    formData,
+    setFormData
+  } = _ref;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "other-info-container"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    placeholder: "Nationality...",
+    value: formData.nationality,
+    onChange: e => {
+      setFormData({ ...formData,
+        nationality: e.target.value
+      });
+    }
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    placeholder: "Other...",
+    value: formData.other,
+    onChange: e => {
+      setFormData({ ...formData,
+        other: e.target.value
+      });
+    }
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (OtherInfo);
+
+/***/ }),
+
+/***/ "./src/PersonalInfo.js":
+/*!*****************************!*\
+  !*** ./src/PersonalInfo.js ***!
+  \*****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function PersonalInfo(_ref) {
+  let {
+    formData,
+    setFormData
+  } = _ref;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "personal-info-container"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    placeholder: "First Name...",
+    value: formData.firstName,
+    onChange: e => {
+      setFormData({ ...formData,
+        firstName: e.target.value
+      });
+    }
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    placeholder: "Last Name...",
+    value: formData.lastName,
+    onChange: e => {
+      setFormData({ ...formData,
+        lastName: e.target.value
+      });
+    }
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    placeholder: "Username...",
+    value: formData.username,
+    onChange: e => {
+      setFormData({ ...formData,
+        username: e.target.value
+      });
+    }
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (PersonalInfo);
+
+/***/ }),
+
+/***/ "./src/SignUpInfo.js":
+/*!***************************!*\
+  !*** ./src/SignUpInfo.js ***!
+  \***************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function SignUpInfo(_ref) {
+  let {
+    formData,
+    setFormData
+  } = _ref;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "sign-up-container"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    placeholder: "Email...",
+    value: formData.email,
+    onChange: event => setFormData({ ...formData,
+      email: event.target.value
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    placeholder: "Password...",
+    value: formData.password,
+    onChange: event => setFormData({ ...formData,
+      password: event.target.value
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    placeholder: "Confirm Password...",
+    value: formData.confirmPassword,
+    onChange: event => setFormData({ ...formData,
+      confirmPassword: event.target.value
+    })
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SignUpInfo);
+
+/***/ }),
+
+/***/ "./src/edit.js":
+/*!*********************!*\
+  !*** ./src/edit.js ***!
+  \*********************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Edit; }
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _SignUpInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SignUpInfo */ "./src/SignUpInfo.js");
+/* harmony import */ var _PersonalInfo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PersonalInfo */ "./src/PersonalInfo.js");
+/* harmony import */ var _OtherInfo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./OtherInfo */ "./src/OtherInfo.js");
+
+
+
+
+
+
+
+
+
+const {
+  __
+} = wp.i18n;
+const {
+  TextControl,
+  SelectControl,
+  Toolbar,
+  Button,
+  Tooltip,
+  PanelBody,
+  PanelRow,
+  FormToggle,
+  ToggleControl,
+  ToolbarGroup,
+  Disabled,
+  RadioControl,
+  RangeControl,
+  FontSizePicker
+} = wp.components;
+const {
+  serverSideRender: ServerSideRender
+} = wp;
+const {
+  InspectorControls
+} = wp.blockEditor;
+let quizes = frontend_quiz.quizes.posts;
+setTimeout(function () {
+  wp.apiFetch({
+    path: "wp/v2/quizzes"
+  }).then(fetchedQuizes => {
+    quizes = fetchedQuizes;
+  }).catch();
+}, 1000);
+function Edit(props) {
+  const {
+    setAttributes,
+    attributes,
+    className
+  } = props;
+  const [page, setPage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const [formData, setFormData] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    email: "",
+    password: "",
+    confirmPassword: "",
+    firstName: "",
+    lastName: "",
+    username: "",
+    nationality: "",
+    other: ""
+  });
+  const FormTitles = ["Sign Up", "Personal Info", "Other"];
+
+  const PageDisplay = () => {
+    quizes.map(quiz => {
+      console.log(quiz);
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, quiz);
+    }); // if (page === 0) {
+    // 	return <SignUpInfo formData={formData} setFormData={setFormData} />;
+    // 	// return <SignUpInfo formData={formData} setFormData={setFormData} />;
+    // } else if (page === 1) {
+    // 	return <PersonalInfo formData={formData} setFormData={setFormData} />;
+    // } else {
+    // 	return <OtherInfo formData={formData} setFormData={setFormData} />;
+    // }
+  };
+
+  return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: props.className
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "progressbar"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%"
+    }
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "form-container"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "header"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, FormTitles[page])), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "body"
+  }, PageDisplay()), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "footer"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    disabled: page == 0,
+    onClick: () => {
+      setPage(currPage => currPage - 1);
+    }
+  }, "Prev"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: () => {
+      if (page === FormTitles.length - 1) {
+        alert("FORM SUBMITTED");
+        console.log(formData);
+      } else {
+        setPage(currPage => currPage + 1);
+      }
+    }
+  }, page === FormTitles.length - 1 ? "Submit" : "Next")))))];
+}
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -9,26 +285,32 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/server-side-render */ "@wordpress/server-side-render");
-/* harmony import */ var _wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./save */ "./src/save.js");
-
-
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/server-side-render */ "@wordpress/server-side-render");
+/* harmony import */ var _wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/save.js");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 
+const {
+  __
+} = wp.i18n;
 
 
+let quizes = [];
+wp.apiFetch({
+  path: "wp/v2/quizzes"
+}).then(fetchedQuizes => {
+  quizes = fetchedQuizes;
+}).catch();
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * All files containing `style` keyword are bundled together. The code used
@@ -44,28 +326,52 @@ __webpack_require__.r(__webpack_exports__);
 // import Edit from './edit';
 
 
+
 /**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)('gutenberg-block/quizapp', {
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('gutenberg-block/quizapp', {
+  title: __('Quiz App', 'quiz'),
+  icon: 'list-view',
+  keywords: [__('WPC Food List', 'quiz'), __('WP Cafe', 'quiz'), __('Food Tab', 'quiz')],
+  attributes: {
+    total_quizes: {
+      type: 'integer',
+      default: 0
+    } // wpc_menu_cat: {
+    // 	type: "array",
+    // 	default: []
+    // },
+    // wpc_price_show : {
+    // 	type: 'string',
+    // 	default: 'yes'
+    // },
+
+  },
+
   /**
    * @see ./edit.js
    */
-  edit: function (props) {
-    const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)();
-    console.log(props.attributes);
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_2___default()), {
-      block: "gutenberg-block/quizapp"
-    }));
-  },
+  edit: _edit__WEBPACK_IMPORTED_MODULE_5__["default"],
+  // edit: function (props) {
+  // 	const blockProps = useBlockProps();
+  // 	console.log(props.attributes);
+  // 	return (
+  // 		<div {...blockProps}>
+  // 			<ServerSideRender
+  // 				block="gutenberg-block/quizapp"
+  // 			/>
+  // 		</div>
+  // 	);
+  // },
 
   /**
    * @see ./save.js
    */
-  save: _save__WEBPACK_IMPORTED_MODULE_5__["default"]
+  save: _save__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 
 /***/ }),
@@ -118,6 +424,18 @@ function save() {
 
 /***/ }),
 
+/***/ "./src/editor.scss":
+/*!*************************!*\
+  !*** ./src/editor.scss ***!
+  \*************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./src/style.scss":
 /*!************************!*\
   !*** ./src/style.scss ***!
@@ -127,6 +445,16 @@ function save() {
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ (function(module) {
+
+module.exports = window["React"];
 
 /***/ }),
 
