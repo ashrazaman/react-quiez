@@ -9,9 +9,8 @@ $quizzes = new WP_Query( $args );
 
 $quizes = $settings['total_quizes'];
 $total_quizes = $quizzes->found_posts;
-echo $total_quizes;
 ?>
-<form action="" id="quiz-form">
+<form action="" id="quiz-form" method="">
 		<?php foreach ( $quizzes->posts as  $quiz) : ?>
 		<div class="quiz-<?php echo $quiz->ID; ?>">
 			<h2><?php echo $quiz->post_title; ?></h2>
@@ -29,5 +28,6 @@ echo $total_quizes;
 
 
 		<?php endforeach; ?>
+		<?php wp_nonce_field( "quiz_nonce_action", 'quiz_nonce_field' ); ?>
         <input type="submit" value="Result" id="quiz-btn">
 </form>

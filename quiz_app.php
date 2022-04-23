@@ -67,7 +67,7 @@ function dynamic_content_for_quiz() {
         'api_version' => 2,
 		"title" => "Quiz App",
         'editor_script' => 'load-editor-script',
-        'render_callback' => 'render_template',
+//        'render_callback' => 'render_template',
 		'attributes' => array(
 			'total_quizes' => array(
 				'type' => 'integer',
@@ -79,8 +79,20 @@ function dynamic_content_for_quiz() {
 add_action( 'init', 'dynamic_content_for_quiz' );
 
 
-
-
-
-
-
+/*
+ * Rest API for quizzes with custom field
+ * */
+add_action( 'rest_api_init', 'adding_user_meta_rest' );
+function adding_user_meta_rest() {
+	register_rest_field( 'quizzes',
+		'quizzes_meta',
+		array(
+			'get_callback'      => 'user_meta_callback',
+			'update_callback'   => null,
+			'schema'            => null,
+		)
+	);
+}
+function user_meta_callback( $quiz, $field_name, $request) {
+	return get_post_meta( $quiz['id'] );
+}
